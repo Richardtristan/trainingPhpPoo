@@ -1,13 +1,10 @@
 <?php
-
-// On démarre la session
 session_start();
+require "User.php";
+if (!isset($_SESSION['idUser'])) {
+    header('location: index.php');
+}else{$user = new User($_SESSION['username'], $_SESSION['email'], $_SESSION['password']);
 
-// On détruit les variables de notre session
-session_unset();
+    $user->logout();}
 
-// On détruit notre session
-session_destroy();
 
-// On redirige le visiteur vers la page d'accueil
-header('location: index.php');

@@ -47,7 +47,9 @@ if (!isset($_SESSION['idUser'])) {
 
 } else {
     echo $form->button('se deconnecter', '/logout.php') . "Vous êtes connecté en tant que " . $_SESSION['username']. '<br>';
-    echo $form->button("mettre à jour son compte", "/update.php");
+    echo $form->button("mettre à jour son compte" , "/update.php"). '<br>';
+    echo $form->button("supprimé mon compte", "/delete.php"). '<br>';
+
 }
 
 ?>
